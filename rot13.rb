@@ -12,13 +12,12 @@ class Rot13Converter
 
   def initialize(input_string)
     @input_string = input_string
-    @char_array = []
     @output_string = ""    
   end
 
   def convert_string
-    @char_array = @input_string.split("")
-    @char_array.collect! do |char|
+    char_array = @input_string.split("")
+    char_array.each do |char|
       @output_string << @@rot13_hash[char]
     end
     @output_string
