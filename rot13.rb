@@ -18,7 +18,14 @@ class Rot13Converter
   def convert_string
     char_array = @input_string.split("")
     char_array.each do |char|
-      @output_string << @@rot13_hash[char]
+      if char == " "
+        @output_string << " "
+      elsif char =~ /[A-Za-z]/ 
+        @output_string << @@rot13_hash[char]
+      else
+        @output_string << char
+        puts "#{char} is not an ASCII letter and has not been converted."
+      end
     end
     @output_string
   end
