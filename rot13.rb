@@ -16,8 +16,7 @@ class Rot13Converter
   end
 
   def convert_string
-    char_array = @input_string.split("")
-    char_array.each do |char|
+    @input_string.each_char do |char|
       if char == " "
         @output_string << " "
       elsif char =~ /[A-Za-z]/ 
@@ -39,6 +38,6 @@ input_string = gets.chomp!
 
 my_converter = Rot13Converter.new(input_string)
 
-
 puts "Here is the string transformed using ROT13:"
 puts my_converter.convert_string
+
