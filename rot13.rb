@@ -23,7 +23,7 @@ class Rot13Converter
         @output_string << @@rot13_hash[char]
       else
         @output_string << char
-        puts "#{char} is not an ASCII letter and has not been converted."
+        puts "   - #{char} is not an ASCII letter and has not been converted."
       end
     end
     @output_string
