@@ -34,8 +34,14 @@ class Rot13Converter
       case char
       when " "
         @output_string << " "
-      when /[A-Za-z]/
+      when /[A-M]/
         @output_string << "*"
+      when /[a-m]/
+        @output_string << "."
+      when /[N-Z]/
+        @output_string << "?"
+      when /[n-z]/
+        @output_string << "+"
       else
         @output_string << char
         puts "   - #{char} is not an ASCII letter and has not been converted."
